@@ -17,3 +17,11 @@ resource "aws_subnet" "main"{
         Nane = "main"
     }
 }
+
+resource "aws_subnet" "secondary"{
+    vpc_id = aws_vpc.mail.id
+    cidr_block = "var.subnet_cird_block_secondary"
+    tags = {
+        Nane = "secondary"
+    }
+}
