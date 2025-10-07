@@ -4,16 +4,16 @@ provider "aws" [
 ]
 
 resource "aws_vpc" "main"{
-    cidr_block = "192.168.0.0/16"
+    cidr_block = var.vpc_cidr_block
     tags = {
-        Nane = "mail"
+        Nane = "main"
     }
 }
 
 resource "aws_subnet" "main"{
     vpc_id = aws_vpc.mail.id
-    cidr_block = "192.168.1.0/24"
+    cidr_block = "var.subnet_cird_block"
     tags = {
-        Nane = "mail"
+        Nane = "main"
     }
 }
